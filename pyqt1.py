@@ -1,3 +1,4 @@
+# zadanie 4
 import json
 from PyQt5.QtWidgets import QApplication, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget, QSpinBox, QLabel, QHBoxLayout
 class Weather:
