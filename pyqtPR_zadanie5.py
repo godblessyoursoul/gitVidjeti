@@ -50,14 +50,13 @@ class WeatherApp(QWidget):
             self.display_data(avg_data)
 if __name__ == "__main__":
     import sys
-    # пример данных
-    weather_data = [
-        {"city": "Moscow", "temperature": -5, "unit": "C"},
-        {"city": "Tokyo", "temperature": 8, "unit": "C"},
-        {"city": "Berlin", "temperature": 12, "unit": "C"},
-        {"city": "Saint Petersburg", "temperature": 4, "unit": "C"},
-        {"city": "Boston", "temperature": 15, "unit": "C"},
-    ]
+   def load_weather_data(file_path):
+    with open(file_path, encoding="ISO-8859-1") as file:
+        data = json.load(file)
+    return data
+
+if __name__ == "__main__":
+    weather_data = load_weather_data("data.json")
     app = QApplication(sys.argv)
     window = WeatherApp(weather_data)
     window.show()
